@@ -3,6 +3,7 @@
 namespace IncadevUns\CoreDomain\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use IncadevUns\CoreDomain\Enums\MediaType;
 
 class AdministrativeDocument extends Model
 {
@@ -11,5 +12,9 @@ class AdministrativeDocument extends Model
         'type',
         'path',
         'description',
+    ];
+
+    protected $casts = [
+        'type' => MediaType::class,
     ];
 }

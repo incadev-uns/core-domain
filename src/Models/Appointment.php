@@ -4,6 +4,7 @@ namespace IncadevUns\CoreDomain\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use IncadevUns\CoreDomain\Enums\AppointmentStatus;
 use IncadevUns\CoreDomain\Traits\CanBeAudited;
 use IncadevUns\CoreDomain\Traits\CanBeRated;
 
@@ -23,6 +24,7 @@ class Appointment extends Model
     protected $casts = [
         'start_time' => 'datetime',
         'end_time' => 'datetime',
+        'status' => AppointmentStatus::class,
     ];
 
     public function teacher(): BelongsTo

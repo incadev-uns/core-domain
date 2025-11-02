@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use IncadevUns\CoreDomain\Enums\GroupStatus;
 use IncadevUns\CoreDomain\Traits\CanBeAudited;
 use IncadevUns\CoreDomain\Traits\CanBeRated;
 
@@ -24,6 +25,7 @@ class Group extends Model
     protected $casts = [
         'start_date' => 'date',
         'end_date' => 'date',
+        'status' => GroupStatus::class,
     ];
 
     public function courseVersion(): BelongsTo

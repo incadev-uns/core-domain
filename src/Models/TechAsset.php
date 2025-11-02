@@ -4,6 +4,8 @@ namespace IncadevUns\CoreDomain\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use IncadevUns\CoreDomain\Enums\TechAssetStatus;
+use IncadevUns\CoreDomain\Enums\TechAssetType;
 
 class TechAsset extends Model
 {
@@ -17,6 +19,8 @@ class TechAsset extends Model
     ];
 
     protected $casts = [
+        'type' => TechAssetType::class,
+        'status' => TechAssetStatus::class,
         'acquisition_date' => 'date',
         'expiration_date' => 'date',
     ];

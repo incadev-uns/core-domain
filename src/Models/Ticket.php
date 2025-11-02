@@ -5,6 +5,9 @@ namespace IncadevUns\CoreDomain\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use IncadevUns\CoreDomain\Enums\TicketPriority;
+use IncadevUns\CoreDomain\Enums\TicketStatus;
+use IncadevUns\CoreDomain\Enums\TicketType;
 
 class Ticket extends Model
 {
@@ -14,6 +17,12 @@ class Ticket extends Model
         'type',
         'status',
         'priority',
+    ];
+
+    protected $casts = [
+        'type' => TicketType::class,
+        'status' => TicketStatus::class,
+        'priority' => TicketPriority::class,
     ];
 
     public function user(): BelongsTo

@@ -4,6 +4,7 @@ namespace IncadevUns\CoreDomain\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use IncadevUns\CoreDomain\Enums\AgreementStatus;
 
 class Agreement extends Model
 {
@@ -17,6 +18,7 @@ class Agreement extends Model
     ];
 
     protected $casts = [
+        'status' => AgreementStatus::class,
         'start_date' => 'date',
         'renewal_date' => 'date',
     ];

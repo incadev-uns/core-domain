@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use IncadevUns\CoreDomain\Enums\EnrollmentAcademicStatus;
+use IncadevUns\CoreDomain\Enums\PaymentStatus;
 
 class Enrollment extends Model
 {
@@ -14,6 +16,11 @@ class Enrollment extends Model
         'user_id',
         'payment_status',
         'academic_status',
+    ];
+
+    protected $casts = [
+        'payment_status' => PaymentStatus::class,
+        'academic_status' => EnrollmentAcademicStatus::class,
     ];
 
     public function group(): BelongsTo

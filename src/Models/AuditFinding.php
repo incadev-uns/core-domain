@@ -5,6 +5,8 @@ namespace IncadevUns\CoreDomain\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use IncadevUns\CoreDomain\Enums\AuditFindingStatus;
+use IncadevUns\CoreDomain\Enums\SeverityLevel;
 
 class AuditFinding extends Model
 {
@@ -13,6 +15,11 @@ class AuditFinding extends Model
         'description',
         'severity',
         'status',
+    ];
+
+    protected $casts = [
+        'severity' => SeverityLevel::class,
+        'status' => AuditFindingStatus::class,
     ];
 
     public function audit(): BelongsTo

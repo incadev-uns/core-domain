@@ -5,6 +5,8 @@ namespace IncadevUns\CoreDomain\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use IncadevUns\CoreDomain\Enums\StaffPaymentType;
+use IncadevUns\CoreDomain\Enums\StaffType;
 
 class Contract extends Model
 {
@@ -18,6 +20,8 @@ class Contract extends Model
     ];
 
     protected $casts = [
+        'staff_type' => StaffType::class,
+        'payment_type' => StaffPaymentType::class,
         'amount' => 'decimal:2',
         'start_date' => 'date',
         'end_date' => 'date',

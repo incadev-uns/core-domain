@@ -4,6 +4,7 @@ namespace IncadevUns\CoreDomain\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use IncadevUns\CoreDomain\Enums\EnrollmentResultStatus;
 
 class EnrollmentResult extends Model
 {
@@ -17,6 +18,7 @@ class EnrollmentResult extends Model
     protected $casts = [
         'final_grade' => 'decimal:2',
         'attendance_percentage' => 'decimal:2',
+        'status' => EnrollmentResultStatus::class,
     ];
 
     public function enrollment(): BelongsTo

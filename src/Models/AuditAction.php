@@ -4,6 +4,7 @@ namespace IncadevUns\CoreDomain\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use IncadevUns\CoreDomain\Enums\AuditActionStatus;
 
 class AuditAction extends Model
 {
@@ -17,6 +18,7 @@ class AuditAction extends Model
 
     protected $casts = [
         'due_date' => 'date',
+        'status' => AuditActionStatus::class,
     ];
 
     public function auditFinding(): BelongsTo

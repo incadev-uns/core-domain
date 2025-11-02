@@ -5,6 +5,7 @@ namespace IncadevUns\CoreDomain\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use IncadevUns\CoreDomain\Enums\CourseVersionStatus;
 use IncadevUns\CoreDomain\Traits\CanBeAudited;
 use IncadevUns\CoreDomain\Traits\CanBeRated;
 
@@ -21,6 +22,7 @@ class CourseVersion extends Model
     ];
 
     protected $casts = [
+        'status' => CourseVersionStatus::class,
         'price' => 'decimal:2',
     ];
 

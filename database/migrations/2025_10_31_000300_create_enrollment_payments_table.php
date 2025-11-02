@@ -16,6 +16,7 @@ return new class extends Migration
             $table->dateTime('operation_date');
             $table->decimal('amount', 10, 2);
             $table->string('evidence_path');
+            $table->string('status')->default('pending')->index();
             $table->timestamps();
         });
     }
