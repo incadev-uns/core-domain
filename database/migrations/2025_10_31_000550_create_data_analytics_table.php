@@ -1,4 +1,5 @@
 <?php
+
 // database/migrations/2024_01_01_000002_create_data_analytics_table.php
 
 use Illuminate\Database\Migrations\Migration;
@@ -62,7 +63,7 @@ return new class extends Migration
                 'analyzable_type',
                 'analyzable_id',
                 'analysis_type',
-                'period'
+                'period',
             ], 'uniq_analytics_main');
         });
     }

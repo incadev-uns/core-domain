@@ -3,8 +3,8 @@
 namespace IncadevUns\CoreDomain\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class TechnologySeeder extends Seeder
 {
@@ -30,8 +30,9 @@ class TechnologySeeder extends Seeder
         // Obtener el rol admin
         $adminRole = Role::where('name', 'admin')->first();
 
-        if (!$adminRole) {
+        if (! $adminRole) {
             $this->command->error('❌ El rol "admin" no existe. Por favor, créalo primero.');
+
             return;
         }
 
@@ -42,10 +43,11 @@ class TechnologySeeder extends Seeder
 
         if ($allPermissions->isEmpty()) {
             $this->command->error('❌ No hay permisos en la base de datos. Ejecuta primero el PermissionsSeeder.');
+
             return;
         }
 
-        $this->command->info('🔄 Asignando ' . $allPermissions->count() . ' permisos al rol admin...');
+        $this->command->info('🔄 Asignando '.$allPermissions->count().' permisos al rol admin...');
 
         // Asignar TODOS los permisos al rol admin
         $adminRole->syncPermissions($allPermissions);
@@ -54,17 +56,17 @@ class TechnologySeeder extends Seeder
         $this->command->info('');
         $this->command->info('📊 Resumen:');
         $this->command->info('   - Rol: admin');
-        $this->command->info('   - Total de permisos asignados: ' . $allPermissions->count());
+        $this->command->info('   - Total de permisos asignados: '.$allPermissions->count());
         $this->command->info('');
 
         // Mostrar algunos permisos como ejemplo
         $this->command->info('📝 Algunos permisos asignados:');
         $samplePermissions = $allPermissions->take(10);
         foreach ($samplePermissions as $permission) {
-            $this->command->info('   ✓ ' . $permission->name);
+            $this->command->info('   ✓ '.$permission->name);
         }
         if ($allPermissions->count() > 10) {
-            $this->command->info('   ... y ' . ($allPermissions->count() - 10) . ' más.');
+            $this->command->info('   ... y '.($allPermissions->count() - 10).' más.');
         }
 
         $this->command->info('');

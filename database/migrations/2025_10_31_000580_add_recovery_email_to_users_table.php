@@ -29,7 +29,7 @@ return new class extends Migration
                 'recovery_email',
                 'recovery_email_verified_at',
                 'recovery_verification_code',
-                'recovery_code_expires_at'
+                'recovery_code_expires_at',
             ]);
         });
     }
