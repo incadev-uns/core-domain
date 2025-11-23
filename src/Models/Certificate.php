@@ -12,6 +12,7 @@ use IncadevUns\CoreDomain\Traits\CanBeAudited;
  * @property int $user_id
  * @property int $group_id
  * @property \Illuminate\Support\Carbon $issue_date
+ * @property int|null $director_id
  * @property array<array-key, mixed>|null $extra_data_json
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
@@ -43,6 +44,7 @@ class Certificate extends Model
         'user_id',
         'group_id',
         'issue_date',
+        'director_id',
         'extra_data_json',
     ];
 
@@ -59,5 +61,10 @@ class Certificate extends Model
     public function group(): BelongsTo
     {
         return $this->belongsTo(Group::class);
+    }
+
+    public function director(): BelongsTo
+    {
+        return $this->belongsTo(InstituteDirector::class, 'director_id');
     }
 }

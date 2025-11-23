@@ -14,6 +14,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('group_id')->constrained('groups')->onDelete('cascade');
             $table->date('issue_date');
+            $table->foreignId('director_id')->nullable()->constrained('institute_directors')->onDelete('set null');
             $table->json('extra_data_json')->nullable();
             $table->timestamps();
         });
