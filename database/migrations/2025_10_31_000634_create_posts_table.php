@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('campaign_id');
+            // post id from meta
+            $table->string('meta_post_id')->nullable()->unique();
             $table->string('title');
             $table->string('platform'); // Facebook, TikTok, etc.
             $table->text('content')->nullable();
