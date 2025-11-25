@@ -70,4 +70,9 @@ class CourseVersion extends Model
     {
         return $this->hasMany(Group::class);
     }
+
+    public function campaigns(): HasMany
+    {
+        return $this->hasMany(Campaign::class, 'course_version_id');
+    }
 }
