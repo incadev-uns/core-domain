@@ -538,6 +538,6 @@ class PermissionsSeeder extends Seeder
 
         $this->command->info('✅ Todos los permisos creados exitosamente!');
         $this->command->info('');
-        $this->command->info('Total de permisos creados: ' . count($allPermissions));
+        $this->command->info('Total de permisos creados: '.count($allPermissions));
     }
 }
