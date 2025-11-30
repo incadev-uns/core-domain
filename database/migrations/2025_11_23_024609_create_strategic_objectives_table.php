@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -17,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('description');
             $table->decimal('goal_value');
+            $table->string('status');
             $table->foreignId('user_id')->nullable()->constrained('users')->nullOnDelete();
             $table->bigInteger('weight')->default(0);
             $table->jsonb('kpis')->nullable();

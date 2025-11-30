@@ -14,6 +14,7 @@ class StrategicPlan extends Model
     protected $fillable = [
         'title',
         'description',
+        'alineacion_vision',
         'start_date',
         'end_date',
         'status',

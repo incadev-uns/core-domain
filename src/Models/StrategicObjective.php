@@ -15,6 +15,7 @@ class StrategicObjective extends Model
         'plan_id',
         'title',
         'description',
+        'status',
         'goal_value',
         'user_id',
         'weight',

@@ -527,7 +527,6 @@ class UserSeeder extends Seeder
         // 🧩 GRUPO STRATEGIC PLANNING - Usuarios adicionales
 
         // Alliances Manager
-        $alliancesManagerRole = Role::create(['name' => 'alliances_manager']);
         $alliancesManager1 = $userModelClass::firstOrCreate(
             ['email' => 'carlos.alliances@incadev.com'],
             [
@@ -537,10 +536,9 @@ class UserSeeder extends Seeder
                 'fullname' => 'CARLOS DANIEL DOMINGUEZ ALBA',
             ]
         );
-        $alliancesManager1->assignRole($alliancesManagerRole);
+        $alliancesManager1->assignRole($continuousImprovementRole);
 
         // Documents Manager
-        $documentsManagerRole = Role::create(['name' => 'documents_manager']);
         $documentsManager1 = $userModelClass::firstOrCreate(
             ['email' => 'alex.docs@incadev.com'],
             [
@@ -550,10 +548,10 @@ class UserSeeder extends Seeder
                 'fullname' => 'ALEX ALCANTARA VEGA',
             ]
         );
-        $documentsManager1->assignRole($documentsManagerRole);
+        $documentsManager1->assignRole($continuousImprovementRole);
 
         // Conversation Manager
-        $conversationManagerRole = Role::create(['name' => 'conversation_manager']);
+        $conversationManagerRole = Role::create(['name' => 'planner']);
         $conversationManager1 = $userModelClass::firstOrCreate(
             ['email' => 'ilan.conversation@incadev.com'],
             [

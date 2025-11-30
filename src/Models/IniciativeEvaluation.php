@@ -5,6 +5,24 @@ namespace IncadevUns\CoreDomain\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property int $id
+ * @property int $inicative_id
+ * @property int $evaluartor_user
+ * @property float $score
+ * @property int $document_id
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|IniciativeEvaluation newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|IniciativeEvaluation newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|IniciativeEvaluation query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|IniciativeEvaluation whereIniciativeId()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|IniciativeEvaluation whereEvaluatorUser()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|IniciativeEvaluation whereScore()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|IniciativeEvaluation whereDocumentId()
+ *
+ * @mixin \Eloquent
+ */
+
 class IniciativeEvaluation extends Model
 {
     use HasFactory;

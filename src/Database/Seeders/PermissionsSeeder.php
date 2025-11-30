@@ -126,11 +126,48 @@ class PermissionsSeeder extends Seeder
             'strategic-contents.update',
             'strategic-contents.delete',
 
+            'strategic_plans.view',
+            'strategic_plans.view-any',
+            'strategic_plans.create',
+            'strategic_plans.update',
+            'strategic_plans.delete',
+
+            'strategic_objectives.view',
+            'strategic_objectives.view-any',
+            'strategic_objectives.create',
+            'strategic_objectives.update',
+            'strategic_objectives.delete',
+
             'strategic-documents.view',
             'strategic-documents.view-any',
             'strategic-documents.create',
             'strategic-documents.update',
             'strategic-documents.delete',
+
+            'quality_estandards.view',
+            'quality_estandards.view-any',
+            'quality_estandards.create',
+            'quality_estandards.update',
+            'quality_estandards.delete',
+
+            'stardard_rating.view',
+            'stardard_rating.view-any',
+            'stardard_rating.create',
+            'stardard_rating.update',
+            'stardard_rating.delete',
+
+            'iniciatives.view',
+            'iniciatives.view-any',
+            'iniciatives.create',
+            'iniciatives.update',
+            'iniciatives.delete',
+
+            'iniciative_evaluations.view',
+            'iniciative_evaluations.view-any',
+            'iniciative_evaluations.create',
+            'iniciative_evaluations.update',
+            'iniciative_evaluations.delete',
+
         ];
         $allPermissions = array_merge($allPermissions, $strategicPermissions);
 
@@ -501,6 +538,6 @@ class PermissionsSeeder extends Seeder
 
         $this->command->info('✅ Todos los permisos creados exitosamente!');
         $this->command->info('');
-        $this->command->info('Total de permisos creados: '.count($allPermissions));
+        $this->command->info('Total de permisos creados: ' . count($allPermissions));
     }
 }
