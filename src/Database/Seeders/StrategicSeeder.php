@@ -6,7 +6,6 @@ use Illuminate\Database\Seeder;
 use IncadevUns\CoreDomain\Models\Iniciative;
 use IncadevUns\CoreDomain\Models\IniciativeEvaluation;
 use IncadevUns\CoreDomain\Models\KpiGoal;
-use IncadevUns\CoreDomain\Models\StrategicDocument;
 use IncadevUns\CoreDomain\Models\StrategicObjective;
 use IncadevUns\CoreDomain\Models\StrategicPlan;
 use Spatie\Permission\Models\Role;
@@ -23,34 +22,31 @@ class StrategicSeeder extends Seeder
 
         $plannerAdminPermissions = [
             // 📌 PLANIFICACIÓN INSTITUCIONAL (Misión, Visión, Metas)
-            'strategic_contents.view',
-            'strategic_contents.create',
-            'strategic_contents.update',
-            'strategic_contents.delete',
+            'strategic-contents.view',
+            'strategic-contents.create',
+            'strategic-contents.update',
+            'strategic-contents.delete',
 
-            'strategic_plans.view',
-            'strategic_plans.create',
-            'strategic_plans.update',
-            'strategic_plans.delete',
+            'strategic-plans.view',
+            'strategic-plans.create',
+            'strategic-plans.update',
+            'strategic-plans.delete',
 
-            'strategic_objectives.view',
-            'strategic_objectives.create',
-            'strategic_objectives.update',
-            'strategic_objectives.delete',
-
-            // Solo lectura de KPIs
-            'kpi_goals.view',
+            'strategic-objectives.view',
+            'strategic-objectives.create',
+            'strategic-objectives.update',
+            'strategic-objectives.delete',
 
             // 📌 GESTIÓN DE CALIDAD EDUCATIVA (Estándares, Acreditación)
-            'quality_estandards.view',
-            'quality_estandards.create',
-            'quality_estandards.update',
-            'quality_estandards.delete',
+            'quality-estandards.view',
+            'quality-estandards.create',
+            'quality-estandards.update',
+            'quality-estandards.delete',
 
-            'stardard_rating.view',
-            'stardard_rating.create',
-            'stardard_rating.update',
-            'stardard_rating.delete',
+            'stardard-rating.view',
+            'stardard-rating.create',
+            'stardard-rating.update',
+            'stardard-rating.delete',
 
             // 📌 GESTIÓN DE ALIANZAS Y CONVENIOS
             'organizations.view',
@@ -69,20 +65,20 @@ class StrategicSeeder extends Seeder
             'conversations.update',
             'conversations.delete',
 
-            'conversation_users.view',
-            'conversation_users.create',
-            'conversation_users.update',
-            'conversation_users.delete',
+            'conversation-users.view',
+            'conversation-users.create',
+            'conversation-users.update',
+            'conversation-users.delete',
 
             'messages.view',
             'messages.create',
             'messages.update',
             'messages.delete',
 
-            'message_files.view',
-            'message_files.create',
-            'message_files.update',
-            'message_files.delete',
+            'message-files.view',
+            'message-files.create',
+            'message-files.update',
+            'message-files.delete',
 
             // 📌 INNOVACIÓN Y MEJORA CONTINUA
             'iniciatives.view',
@@ -90,36 +86,33 @@ class StrategicSeeder extends Seeder
             'iniciatives.update',
             'iniciatives.delete',
 
-            'iniciative_evaluations.view',
-            'iniciative_evaluations.create',
-            'iniciative_evaluations.update',
-            'iniciative_evaluations.delete',
+            'iniciative-evaluations.view',
+            'iniciative-evaluations.create',
+            'iniciative-evaluations.update',
+            'iniciative-evaluations.delete',
 
             // 📌 DOCUMENTACIÓN Y EVIDENCIAS
-            'strategic_documents.view',
-            'strategic_documents.create',
-            'strategic_documents.update',
-            'strategic_documents.delete',
+            'strategic-documents.view',
+            'strategic-documents.create',
+            'strategic-documents.update',
+            'strategic-documents.delete',
         ];
 
         $plannerPermissions = [
             // 📌 PLANIFICACIÓN INSTITUCIONAL
             // Ver misión/visión/planes, editar solo metas/avances (objetivos)
-            'strategic_contents.view',
-            'strategic_plans.view',
+            'strategic-contents.view',
+            'strategic-plans.view',
 
-            'strategic_objectives.view',
-            'strategic_objectives.update',
-
-            // Solo lectura de KPIs
-            'kpi_goals.view',
+            'strategic-objectives.view',
+            'strategic-objectives.update',
 
             // 📌 GESTIÓN DE CALIDAD EDUCATIVA
             // Ver, Editar procesos de acreditación
-            'quality_estandards.view',
-            'quality_estandards.update',
+            'quality-estandards.view',
+            'quality-estandards.update',
             // Puede ver resultados de encuestas
-            'stardard_rating.view',
+            'stardard-rating.view',
 
             // 📌 GESTIÓN DE ALIANZAS Y CONVENIOS
             // Ver, Crear, Editar (seguimiento, renovación)
@@ -131,46 +124,43 @@ class StrategicSeeder extends Seeder
             // 📌 COLABORACIÓN Y COMUNICACIÓN DIGITAL
             // Ver, Crear, Editar tareas/archivos (mensajes)
             'conversations.view',
-            'conversation_users.view',
+            'conversation-users.view',
 
             'messages.view',
             'messages.create',
             'messages.update',
 
-            'message_files.view',
-            'message_files.create',
-            'message_files.update',
+            'message-files.view',
+            'message-files.create',
+            'message-files.update',
 
             // 📌 INNOVACIÓN Y MEJORA CONTINUA
             // Ver evaluaciones de mejoras aplicadas
             'iniciatives.view',
-            'iniciative_evaluations.view',
+            'iniciative-evaluations.view',
 
             // 📌 DOCUMENTACIÓN Y EVIDENCIAS
             // Ver, Crear, Editar (carga de evidencias)
-            'strategic_documents.view',
-            'strategic_documents.create',
-            'strategic_documents.update',
+            'strategic-documents.view',
+            'strategic-documents.create',
+            'strategic-documents.update',
         ];
 
         $mejoraContinuaPermissions = [
             // 📌 PLANIFICACIÓN INSTITUCIONAL
             // Ver metas y resultados
-            'strategic_contents.view',
-            'strategic_plans.view',
-            'strategic_objectives.view',
-
-            // Solo lectura de KPIs
-            'kpi_goals.view',
+            'strategic-contents.view',
+            'strategic-plans.view',
+            'strategic-objectives.view',
 
             // 📌 GESTIÓN DE CALIDAD EDUCATIVA
             // Ver, Crear, Editar (encuestas, auditorías internas)
-            'quality_estandards.view',
+            'quality-estandards.view',
 
-            'stardard_rating.view',
-            'stardard_rating.create',
-            'stardard_rating.update',
-            'stardard_rating.delete',
+            'stardard-rating.view',
+            'stardard-rating.create',
+            'stardard-rating.update',
+            'stardard-rating.delete',
 
             // 📌 GESTIÓN DE ALIANZAS Y CONVENIOS
             // Solo ver para alinear objetivos
@@ -182,14 +172,14 @@ class StrategicSeeder extends Seeder
             'conversations.view',
             'conversations.create',
 
-            'conversation_users.view',
-            'conversation_users.create',
+            'conversation-users.view',
+            'conversation-users.create',
 
             'messages.view',
             'messages.create',
 
-            'message_files.view',
-            'message_files.create',
+            'message-files.view',
+            'message-files.create',
 
             // 📌 INNOVACIÓN Y MEJORA CONTINUA
             // Gestión completa de iniciativas
@@ -198,14 +188,14 @@ class StrategicSeeder extends Seeder
             'iniciatives.update',
             'iniciatives.delete',
 
-            'iniciative_evaluations.view',
-            'iniciative_evaluations.create',
-            'iniciative_evaluations.update',
-            'iniciative_evaluations.delete',
+            'iniciative-evaluations.view',
+            'iniciative-evaluations.create',
+            'iniciative-evaluations.update',
+            'iniciative-evaluations.delete',
 
             // 📌 DOCUMENTACIÓN Y EVIDENCIAS
             // Ver (acceso seguro para auditoría institucional)
-            'strategic_documents.view',
+            'strategic-documents.view',
         ];
 
         if ($plannerAdminRole) {
@@ -235,9 +225,10 @@ class StrategicSeeder extends Seeder
          * ========================================================
          */
         $plan1 = StrategicPlan::firstOrCreate(
-            ['title' => 'Plan Estratégico Institucional 2025-2027'],
+            ['title' => 'Plan Estratégico Institucional 2026-2030'],
             [
-                'description' => 'Líneas estratégicas: calidad académica, alianzas y transformación digital.',
+                'description' => 'Plan estratégico de la Facultad orientado a mejorar calidad educativa, gestión de recursos y empleabilidad.',
+                'alineacion_vision' => 'Alineado con la visión institucional de excelencia académica e impacto en el entorno.',
                 'start_date' => '2025-01-01',
                 'end_date' => '2027-12-31',
                 'status' => 'vigente',
@@ -249,6 +240,7 @@ class StrategicSeeder extends Seeder
             ['title' => 'Plan de Transformación Digital 2025-2026'],
             [
                 'description' => 'Modernización de procesos, capacitación docente y adopción de plataformas.',
+                'alineacion_vision' => 'Alineado con la visión institucional de excelencia académica e impacto en el entorno.',
                 'start_date' => '2025-03-01',
                 'end_date' => '2026-12-31',
                 'status' => 'en_ejecucion',
@@ -262,85 +254,53 @@ class StrategicSeeder extends Seeder
          * ========================================================
          */
         StrategicObjective::firstOrCreate(
-            ['title' => 'Incrementar empleabilidad de egresados'],
+            ['title' => 'Mejorar la satisfacción estudiantil'],
             [
                 'plan_id' => $plan1->id,
-                'description' => 'Alianzas de prácticas, ferias laborales y seguimiento a egresados.',
-                'goal_value' => 0.90,
-                'user_id' => $andrea->id,
-                'weight' => 40,
-                'kpis' => [
-                    ['name' => 'Tasa empleabilidad', 'target' => 90, 'unit' => '%'],
-                    ['name' => 'Convenios activos', 'target' => 20, 'unit' => 'n'],
-                ],
-            ]
-        );
-
-        StrategicObjective::firstOrCreate(
-            ['title' => 'Acreditar programas activos'],
-            [
-                'plan_id' => $plan1->id,
-                'description' => 'Cumplir estándares y evidencias de calidad para la acreditación.',
-                'goal_value' => 1.00,
-                'user_id' => $miguel->id,
-                'weight' => 35,
-                'kpis' => [
-                    ['name' => 'Programas acreditados', 'target' => 100, 'unit' => '%'],
-                    ['name' => 'Hallazgos críticos', 'target' => 0, 'unit' => 'n'],
-                ],
-            ]
-        );
-
-        StrategicObjective::firstOrCreate(
-            ['title' => 'Modernizar infraestructura digital'],
-            [
-                'plan_id' => $plan2->id,
-                'description' => 'Migración de servicios, automatización y capacitación.',
-                'goal_value' => 0.80,
+                'description' => 'Incrementar el nivel de satisfacción general de los estudiantes con los servicios académicos y administrativos.',
+                'goal_value' => 85.00,
+                'status' => 'vigente',
                 'user_id' => $andrea->id,
                 'weight' => 25,
                 'kpis' => [
-                    ['name' => 'Servicios migrados', 'target' => 10, 'unit' => 'n'],
-                    ['name' => 'Usuarios capacitados', 'target' => 200, 'unit' => 'n'],
+                    [1],
+                ],
+            ]
+        );
+
+        StrategicObjective::firstOrCreate(
+            ['title' => 'Optimizar la ejecución presupuestal'],
+            [
+                'plan_id' => $plan1->id,
+                'description' => 'Garantizar un uso eficiente y oportuno del presupuesto asignado a la Facultad.',
+                'goal_value' => 90.00,
+                'status' => 'vigente',
+                'user_id' => $miguel->id,
+                'weight' => 25,
+                'kpis' => [
+                    [2],
+                ],
+            ]
+        );
+
+        StrategicObjective::firstOrCreate(
+            ['title' => 'Mejorar la satisfacción con los instructores'],
+            [
+                'plan_id' => $plan2->id,
+                'description' => 'Fortalecer las competencias pedagógicas y el acompañamiento docente para mejorar la experiencia del estudiante.',
+                'goal_value' => 88.00,
+                'status' => 'vigente',
+                'user_id' => $andrea->id,
+                'weight' => 25,
+                'kpis' => [
+                    [3],
                 ],
             ]
         );
 
         /**
          * ========================================================
-         * 3. DOCUMENTOS ESTRATÉGICOS
-         * ========================================================
-         */
-        $doc1 = StrategicDocument::firstOrCreate(
-            ['name' => 'Acta de Consejo Académico 001-2025'],
-            [
-                'path' => '/docs/acta_001.pdf',
-                'type' => 'document',
-                'description' => 'Acta oficial del consejo académico.',
-            ]
-        );
-
-        $doc2 = StrategicDocument::firstOrCreate(
-            ['name' => 'Matriz de KPIs 2025'],
-            [
-                'path' => '/docs/kpis_2025.xlsx',
-                'type' => 'document',
-                'description' => 'Listado y metas de indicadores institucionales.',
-            ]
-        );
-
-        $doc3 = StrategicDocument::firstOrCreate(
-            ['name' => 'Política de Calidad Educativa'],
-            [
-                'path' => '/docs/politica_calidad.pdf',
-                'type' => 'document',
-                'description' => 'Documento institucional aprobado.',
-            ]
-        );
-
-        /**
-         * ========================================================
-         * 4. KPI GOALS
+         * 3. KPI GOALS
          * ========================================================
          */
         foreach ([
@@ -415,7 +375,6 @@ class StrategicSeeder extends Seeder
                 'iniciative_id' => $ini1->id,
                 'evaluator_user' => $laura->id,
                 'score' => 85.50,
-                'document_id' => $doc2->id,
             ]
         );
 
@@ -425,7 +384,6 @@ class StrategicSeeder extends Seeder
                 'iniciative_id' => $ini3->id,
                 'evaluator_user' => $miguel->id,
                 'score' => 78.25,
-                'document_id' => $doc1->id,
             ]
         );
 
@@ -435,7 +393,6 @@ class StrategicSeeder extends Seeder
                 'iniciative_id' => $ini2->id,
                 'evaluator_user' => $laura->id,
                 'score' => 72.00,
-                'document_id' => $doc3->id,
             ]
         );
     }

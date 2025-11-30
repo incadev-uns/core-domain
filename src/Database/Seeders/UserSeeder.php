@@ -550,8 +550,6 @@ class UserSeeder extends Seeder
         );
         $documentsManager1->assignRole($continuousImprovementRole);
 
-        // Conversation Manager
-        $conversationManagerRole = Role::create(['name' => 'planner']);
         $conversationManager1 = $userModelClass::firstOrCreate(
             ['email' => 'ilan.conversation@incadev.com'],
             [
@@ -561,7 +559,7 @@ class UserSeeder extends Seeder
                 'fullname' => 'ILAN ANGELES RODRIGUEZ',
             ]
         );
-        $conversationManager1->assignRole($conversationManagerRole);
+        $conversationManager1->assignRole($plannerRole);
 
         // Planner Admin adicional
         $plannerAdmin2 = $userModelClass::firstOrCreate(
