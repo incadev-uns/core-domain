@@ -44,7 +44,6 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @mixin \Eloquent
  */
-
 class MediaFile extends Model
 {
     protected $fillable = [

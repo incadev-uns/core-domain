@@ -208,14 +208,17 @@ class StrategicSeeder extends Seeder
             'strategic_documents.view',
         ];
 
-        if ($plannerAdminRole)
+        if ($plannerAdminRole) {
             $plannerAdminRole->givePermissionTo($plannerAdminPermissions);
+        }
 
-        if ($plannerRole)
+        if ($plannerRole) {
             $plannerRole->givePermissionTo($plannerPermissions);
+        }
 
-        if ($mejoraContinuaRole)
+        if ($mejoraContinuaRole) {
             $mejoraContinuaRole->givePermissionTo($mejoraContinuaPermissions);
+        }
 
         /**
          * ========================================================

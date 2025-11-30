@@ -22,7 +22,6 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @mixin \Eloquent
  */
-
 class IniciativeEvaluation extends Model
 {
     use HasFactory;

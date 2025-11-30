@@ -30,7 +30,6 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @mixin \Eloquent
  */
-
 class Iniciative extends Model
 {
     use HasFactory;
