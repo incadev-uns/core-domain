@@ -218,6 +218,10 @@ class StrategicSeeder extends Seeder
         $andrea = $userModelClass::where('email', 'andrea.planner@incadev.com')->firstOrFail();
         $miguel = $userModelClass::where('email', 'miguel.planner@incadev.com')->firstOrFail();
         $laura = $userModelClass::where('email', 'laura.improvement@incadev.com')->firstOrFail();
+        $diego = $userModelClass::where('email', 'diego.improvement@incadev.com')->firstOrFail();
+        $carlos = $userModelClass::where('email', 'carlos.alliances@incadev.com')->firstOrFail();
+        $alex = $userModelClass::where('email', 'alex.docs@incadev.com')->firstOrFail();
+        $ilan = $userModelClass::where('email', 'ilan.conversation@incadev.com')->firstOrFail();
 
         /**
          * ========================================================
@@ -326,12 +330,12 @@ class StrategicSeeder extends Seeder
          * ========================================================
          */
         $ini1 = Iniciative::firstOrCreate(
-            ['title' => 'Programa de prácticas con empresas locales'],
+            ['title' => 'Programa de practicas con empresas locales'],
             [
                 'plan_id' => $plan1->id,
-                'summary' => 'Fortalecer inserción laboral mediante convenios de prácticas.',
-                'user_id' => $andrea->id,
-                'status' => 'en_progreso',
+                'summary' => 'Fortalecer insercion laboral mediante convenios de practicas.',
+                'user_id' => $miguel->id,
+                'status' => 'en_ejecucion',
                 'start_date' => '2025-02-01',
                 'end_date' => '2025-12-15',
                 'estimated_impact' => 'Alto',
@@ -339,12 +343,12 @@ class StrategicSeeder extends Seeder
         );
 
         $ini2 = Iniciative::firstOrCreate(
-            ['title' => 'Célula de acreditación por escuela'],
+            ['title' => 'Celula de acreditacion por escuela'],
             [
                 'plan_id' => $plan1->id,
                 'summary' => 'Equipos dedicados a evidencias y mejora continua.',
-                'user_id' => $laura->id,
-                'status' => 'pendiente',
+                'user_id' => $carlos->id,
+                'status' => 'propuesta',
                 'start_date' => '2025-03-01',
                 'end_date' => '2026-03-01',
                 'estimated_impact' => 'Medio',
@@ -352,15 +356,106 @@ class StrategicSeeder extends Seeder
         );
 
         $ini3 = Iniciative::firstOrCreate(
-            ['title' => 'Migración de servicios a la nube'],
+            ['title' => 'Migracion de servicios a la nube'],
             [
                 'plan_id' => $plan2->id,
-                'summary' => 'Priorizar sistemas académicos y portal institucional.',
-                'user_id' => $andrea->id,
-                'status' => 'en_progreso',
+                'summary' => 'Priorizar sistemas academicos y portal institucional.',
+                'user_id' => $miguel->id,
+                'status' => 'en_ejecucion',
                 'start_date' => '2025-04-01',
                 'end_date' => '2026-01-31',
                 'estimated_impact' => 'Alto',
+            ]
+        );
+
+        $ini4 = Iniciative::firstOrCreate(
+            ['title' => 'Capacitacion docente en aulas virtuales'],
+            [
+                'plan_id' => $plan2->id,
+                'summary' => 'Talleres mensuales y certificaciones.',
+                'user_id' => $carlos->id,
+                'status' => 'propuesta',
+                'start_date' => '2025-05-15',
+                'end_date' => '2025-11-30',
+                'estimated_impact' => 'Medio',
+            ]
+        );
+
+        $ini5 = Iniciative::firstOrCreate(
+            ['title' => 'Revision de procesos academicos'],
+            [
+                'plan_id' => $plan1->id,
+                'summary' => 'Auditar flujos actuales y documentar mejoras rapidas.',
+                'user_id' => $miguel->id,
+                'status' => 'en_revision',
+                'start_date' => '2025-06-01',
+                'end_date' => '2025-09-30',
+                'estimated_impact' => 'Medio',
+            ]
+        );
+
+        $ini6 = Iniciative::firstOrCreate(
+            ['title' => 'Automatizacion de reportes gerenciales'],
+            [
+                'plan_id' => $plan2->id,
+                'summary' => 'Implementar pipelines de datos para reportes recurrentes.',
+                'user_id' => $carlos->id,
+                'status' => 'aprobada',
+                'start_date' => '2025-07-01',
+                'end_date' => '2025-12-15',
+                'estimated_impact' => 'Alto',
+            ]
+        );
+
+        $ini7 = Iniciative::firstOrCreate(
+            ['title' => 'Portal de transparencia institucional'],
+            [
+                'plan_id' => $plan2->id,
+                'summary' => 'Publicar indicadores y avances en un portal abierto.',
+                'user_id' => $miguel->id,
+                'status' => 'finalizada',
+                'start_date' => '2025-01-15',
+                'end_date' => '2025-05-30',
+                'estimated_impact' => 'Alto',
+            ]
+        );
+
+        $ini8 = Iniciative::firstOrCreate(
+            ['title' => 'Sistema de feedback estudiantil'],
+            [
+                'plan_id' => $plan1->id,
+                'summary' => 'Encuestas y panel de seguimiento de mejoras.',
+                'user_id' => $carlos->id,
+                'status' => 'evaluada',
+                'start_date' => '2024-11-01',
+                'end_date' => '2025-03-31',
+                'estimated_impact' => 'Medio',
+            ]
+        );
+
+        $ini9 = Iniciative::firstOrCreate(
+            ['title' => 'Central de compras de licencias'],
+            [
+                'plan_id' => $plan1->id,
+                'summary' => 'Modelo unico de adquisicion de software para todas las facultades.',
+                'user_id' => $miguel->id,
+                'status' => 'rechazada',
+                'start_date' => '2025-02-01',
+                'end_date' => '2025-04-30',
+                'estimated_impact' => 'Medio',
+            ]
+        );
+
+        $ini10 = Iniciative::firstOrCreate(
+            ['title' => 'Programa de mejora continua de aulas virtuales'],
+            [
+                'plan_id' => $plan2->id,
+                'summary' => 'Refinar lineamientos, soporte y evidencias para aulas virtuales institucionales.',
+                'user_id' => $diego->id,
+                'status' => 'aprobada',
+                'start_date' => '2025-08-01',
+                'end_date' => '2026-02-28',
+                'estimated_impact' => 'Medio',
             ]
         );
 
@@ -370,29 +465,110 @@ class StrategicSeeder extends Seeder
          * ========================================================
          */
         IniciativeEvaluation::firstOrCreate(
-            ['summary' => 'Se evidencian avances en convenios y primeras incorporaciones.'],
             [
+                'summary' => 'Se evidencian avances en convenios y primeras incorporaciones.',
                 'iniciative_id' => $ini1->id,
-                'evaluator_user' => $laura->id,
+            ],
+            [
+                'evaluator_user' => $alex->id,
                 'score' => 85.50,
+                'document_id' => 2,
             ]
         );
 
         IniciativeEvaluation::firstOrCreate(
-            ['summary' => 'Migración con hitos cumplidos; pendiente optimizar costos.'],
             [
+                'summary' => 'Seguimiento: acuerdos firmados y primeros practicantes asignados.',
+                'iniciative_id' => $ini1->id,
+            ],
+            [
+                'evaluator_user' => $ilan->id,
+                'score' => 88.00,
+                'document_id' => null,
+            ]
+        );
+
+        IniciativeEvaluation::firstOrCreate(
+            [
+                'summary' => 'Migracion con hitos cumplidos; pendiente optimizar costos.',
                 'iniciative_id' => $ini3->id,
-                'evaluator_user' => $miguel->id,
+            ],
+            [
+                'evaluator_user' => $ilan->id,
                 'score' => 78.25,
+                'document_id' => 1,
             ]
         );
 
         IniciativeEvaluation::firstOrCreate(
-            ['summary' => 'Células formadas; falta cerrar el plan de evidencias por escuela.'],
             [
-                'iniciative_id' => $ini2->id,
-                'evaluator_user' => $laura->id,
-                'score' => 72.00,
+                'summary' => 'Seguimiento: se estabilizaron servicios, ahorro moderado logrado.',
+                'iniciative_id' => $ini3->id,
+            ],
+            [
+                'evaluator_user' => $alex->id,
+                'score' => 80.50,
+                'document_id' => null,
+            ]
+        );
+
+        IniciativeEvaluation::firstOrCreate(
+            [
+                'summary' => 'Portal publicado y accesible; pendiente agregar serie historica.',
+                'iniciative_id' => $ini7->id,
+            ],
+            [
+                'evaluator_user' => $alex->id,
+                'score' => 90.00,
+                'document_id' => null,
+            ]
+        );
+
+        IniciativeEvaluation::firstOrCreate(
+            [
+                'summary' => 'Evaluacion final: portal completo con historicos y dashboards basicos.',
+                'iniciative_id' => $ini7->id,
+            ],
+            [
+                'evaluator_user' => $ilan->id,
+                'score' => 93.50,
+                'document_id' => null,
+            ]
+        );
+
+        IniciativeEvaluation::firstOrCreate(
+            [
+                'summary' => 'Feedback capturado y acciones de mejora registradas.',
+                'iniciative_id' => $ini8->id,
+            ],
+            [
+                'evaluator_user' => $ilan->id,
+                'score' => 88.00,
+                'document_id' => null,
+            ]
+        );
+
+        IniciativeEvaluation::firstOrCreate(
+            [
+                'summary' => 'Revisión inicial del plan de mejora continua de aulas virtuales.',
+                'iniciative_id' => $ini10->id,
+            ],
+            [
+                'evaluator_user' => $alex->id,
+                'score' => 82.00,
+                'document_id' => null,
+            ]
+        );
+
+        IniciativeEvaluation::firstOrCreate(
+            [
+                'summary' => 'Seguimiento: lineamientos aprobados y soporte reforzado.',
+                'iniciative_id' => $ini10->id,
+            ],
+            [
+                'evaluator_user' => $ilan->id,
+                'score' => 87.50,
+                'document_id' => null,
             ]
         );
     }
