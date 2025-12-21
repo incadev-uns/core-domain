@@ -14,6 +14,7 @@ return new class extends Migration
             $table->foreignId('thread_id')->constrained('threads')->onDelete('cascade');
             $table->foreignId('parent_id')->nullable()->constrained('comments')->onDelete('cascade');
             $table->text('body');
+            $table->string('url_img')->nullable();
             $table->timestamps();
         });
     }

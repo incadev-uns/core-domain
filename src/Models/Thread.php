@@ -49,6 +49,7 @@ class Thread extends Model
         'forum_id',
         'title',
         'body',
+        'url_img'
     ];
 
     public function user(): BelongsTo

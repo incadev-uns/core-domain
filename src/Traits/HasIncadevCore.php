@@ -15,6 +15,7 @@ use IncadevUns\CoreDomain\Models\Comment;
 use IncadevUns\CoreDomain\Models\Contract;
 use IncadevUns\CoreDomain\Models\Conversation;
 use IncadevUns\CoreDomain\Models\Enrollment;
+use IncadevUns\CoreDomain\Models\Forum;
 use IncadevUns\CoreDomain\Models\Group;
 use IncadevUns\CoreDomain\Models\Message;
 use IncadevUns\CoreDomain\Models\StudentProfile;
@@ -147,5 +148,10 @@ trait HasIncadevCore
     public function auditActionsResponsibleFor(): HasMany
     {
         return $this->hasMany(AuditAction::class, 'responsible_id');
+    }
+
+    public function forumsCreated(): HasMany
+    {
+        return $this->hasMany(Forum::class, 'user_create');
     }
 }

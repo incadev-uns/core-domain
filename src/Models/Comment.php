@@ -50,6 +50,7 @@ class Comment extends Model
         'thread_id',
         'parent_id',
         'body',
+        'url_img',
     ];
 
     public function user(): BelongsTo
