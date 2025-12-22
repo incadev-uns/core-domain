@@ -32,6 +32,7 @@ class Forum extends Model
         'name',
         'description',
         'user_create',
+        'url_img',
     ];
 
     public function threads(): HasMany

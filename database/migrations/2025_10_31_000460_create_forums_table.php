@@ -17,6 +17,7 @@ return new class extends Migration
                 ->nullable()
                 ->constrained('users')
                 ->nullOnDelete();
+            $table->string('url_img')->nullable();
             $table->timestamps();
         });
     }
